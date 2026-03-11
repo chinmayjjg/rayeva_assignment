@@ -5,7 +5,7 @@ export interface IAILog extends Document {
   prompt: string;
   response: string;
   parsedOutput: object;
-  model: string;
+  modelName: string;
   durationMs: number;
   success: boolean;
   error?: string;
@@ -22,7 +22,7 @@ const AILogSchema = new Schema<IAILog>(
     prompt: { type: String, required: true },
     response: { type: String, required: true },
     parsedOutput: { type: Schema.Types.Mixed, default: {} },
-    model: { type: String, required: true },
+    modelName: { type: String, required: true },
     durationMs: { type: Number, required: true },
     success: { type: Boolean, required: true },
     error: { type: String },

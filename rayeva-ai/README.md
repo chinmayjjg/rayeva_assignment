@@ -1,9 +1,34 @@
-# Rayeva AI
+﻿# Rayeva AI App
 
-This project is a Next.js + Tailwind CSS application with MongoDB integration via Mongoose.
+Implemented modules:
+- Module 1: AI Auto-Category & Tag Generator
+- Module 3: AI Impact Reporting Generator
 
 ## Setup
 
-1. Copy `.env.local.example` to `.env.local` and fill in your environment variables.
-2. Run `npm install` to install dependencies.
-3. Use `npm run dev` to start the development server.
+```bash
+cp .env.local.example .env.local
+npm install
+npm run dev
+```
+
+Required env vars:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+GROQ_BASE_URL=https://api.groq.com/openai/v1
+GROQ_MODEL=llama-3.3-70b-versatile
+MONGODB_URI=mongodb://localhost:27017/rayeva-ai
+```
+
+## Endpoints
+
+- POST /api/categorize
+- POST /api/impact-report
+- GET /api/logs
+
+## Notes
+
+- AI output is always parsed as JSON and re-validated with Zod.
+- Impact calculations are deterministic and live in lib/services/impact.ts.
+- Prompt and response logging is stored in MongoDB via AILog.
