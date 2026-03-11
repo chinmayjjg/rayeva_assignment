@@ -90,27 +90,27 @@ export default function Dashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-stone-950 px-6 py-12 text-stone-100">
+    <main className="min-h-screen bg-[#f7fbf7] px-6 py-12 text-slate-900">
       <div className="mx-auto flex max-w-7xl flex-col gap-8">
-        <section className="overflow-hidden rounded-[32px] border border-emerald-500/20 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.22),_transparent_35%),linear-gradient(135deg,_rgba(12,10,9,0.98),_rgba(28,25,23,0.95))] p-8 shadow-2xl shadow-emerald-950/30">
-          <p className="text-sm uppercase tracking-[0.35em] text-emerald-300">
+        <section className="rounded-[28px] border border-emerald-100 bg-white p-8 shadow-sm">
+          <p className="text-sm font-medium uppercase tracking-[0.28em] text-emerald-700">
             Rayeva AI Systems Assignment
           </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-stone-50 md:text-6xl">
-            Sustainable commerce workflows with Groq-backed AI and deterministic business logic.
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+            Sustainable commerce workflows with simple, structured AI automation.
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-stone-300 md:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
             Module 1 auto-categorizes products into a constrained catalog taxonomy.
             Module 3 converts order composition into auditable impact reporting with AI-generated narrative layered on top.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
-            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-emerald-200">
+            <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-800">
               Structured JSON outputs
             </span>
-            <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-cyan-200">
+            <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-800">
               Prompt + response logging
             </span>
-            <span className="rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-amber-100">
+            <span className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-800">
               MongoDB persistence
             </span>
           </div>
@@ -121,39 +121,39 @@ export default function Dashboard() {
             onSubmit={(event) =>
               submit(event, "/api/categorize", catalogInput, setCatalogState)
             }
-            className="rounded-[28px] border border-stone-800 bg-stone-900/80 p-6"
+            className="rounded-[24px] border border-emerald-100 bg-white p-6 shadow-sm"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-emerald-300">
+                <p className="text-sm font-medium uppercase tracking-[0.24em] text-emerald-700">
                   Module 1
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold text-stone-50">
+                <h2 className="mt-2 text-2xl font-semibold text-slate-900">
                   AI Auto-Category & Tag Generator
                 </h2>
               </div>
               <button
                 type="submit"
                 disabled={catalogState.loading}
-                className="rounded-full bg-emerald-400 px-5 py-2 text-sm font-medium text-stone-950 transition hover:bg-emerald-300 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-full bg-emerald-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {catalogState.loading ? "Running..." : "Run module"}
               </button>
             </div>
-            <p className="mt-4 text-sm leading-6 text-stone-400">
+            <p className="mt-4 text-sm leading-6 text-slate-600">
               Input is validated, sent to Groq with a constrained taxonomy prompt,
               persisted to MongoDB, and returned as structured JSON.
             </p>
             <textarea
               value={catalogInput}
               onChange={(event) => setCatalogInput(event.target.value)}
-              className="mt-6 min-h-[320px] w-full rounded-2xl border border-stone-700 bg-stone-950/70 p-4 font-mono text-sm text-stone-200 outline-none ring-0 transition focus:border-emerald-400"
+              className="mt-6 min-h-[320px] w-full rounded-2xl border border-emerald-100 bg-[#fcfffc] p-4 font-mono text-sm text-slate-800 outline-none ring-0 transition focus:border-emerald-500"
             />
             {catalogState.error ? (
-              <p className="mt-4 text-sm text-rose-300">{catalogState.error}</p>
+              <p className="mt-4 text-sm text-rose-600">{catalogState.error}</p>
             ) : null}
             {catalogState.data ? (
-              <pre className="mt-4 overflow-x-auto rounded-2xl border border-stone-800 bg-stone-950 p-4 text-xs text-stone-200">
+              <pre className="mt-4 overflow-x-auto rounded-2xl border border-emerald-100 bg-emerald-50/40 p-4 text-xs text-slate-800">
                 {catalogState.data}
               </pre>
             ) : null}
@@ -163,39 +163,39 @@ export default function Dashboard() {
             onSubmit={(event) =>
               submit(event, "/api/impact-report", impactInput, setImpactState)
             }
-            className="rounded-[28px] border border-stone-800 bg-stone-900/80 p-6"
+            className="rounded-[24px] border border-emerald-100 bg-white p-6 shadow-sm"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">
+                <p className="text-sm font-medium uppercase tracking-[0.24em] text-emerald-700">
                   Module 3
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold text-stone-50">
+                <h2 className="mt-2 text-2xl font-semibold text-slate-900">
                   AI Impact Reporting Generator
                 </h2>
               </div>
               <button
                 type="submit"
                 disabled={impactState.loading}
-                className="rounded-full bg-cyan-400 px-5 py-2 text-sm font-medium text-stone-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-full bg-emerald-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {impactState.loading ? "Running..." : "Run module"}
               </button>
             </div>
-            <p className="mt-4 text-sm leading-6 text-stone-400">
+            <p className="mt-4 text-sm leading-6 text-slate-600">
               Plastic and carbon metrics are calculated in code, while the model
               only generates language from those verified numbers.
             </p>
             <textarea
               value={impactInput}
               onChange={(event) => setImpactInput(event.target.value)}
-              className="mt-6 min-h-[320px] w-full rounded-2xl border border-stone-700 bg-stone-950/70 p-4 font-mono text-sm text-stone-200 outline-none ring-0 transition focus:border-cyan-400"
+              className="mt-6 min-h-[320px] w-full rounded-2xl border border-emerald-100 bg-[#fcfffc] p-4 font-mono text-sm text-slate-800 outline-none ring-0 transition focus:border-emerald-500"
             />
             {impactState.error ? (
-              <p className="mt-4 text-sm text-rose-300">{impactState.error}</p>
+              <p className="mt-4 text-sm text-rose-600">{impactState.error}</p>
             ) : null}
             {impactState.data ? (
-              <pre className="mt-4 overflow-x-auto rounded-2xl border border-stone-800 bg-stone-950 p-4 text-xs text-stone-200">
+              <pre className="mt-4 overflow-x-auto rounded-2xl border border-emerald-100 bg-emerald-50/40 p-4 text-xs text-slate-800">
                 {impactState.data}
               </pre>
             ) : null}
