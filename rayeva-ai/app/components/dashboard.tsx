@@ -7,7 +7,7 @@ const sampleCatalogPayload = {
   description:
     "A molded fiber tray for takeaway meals made from upcycled sugarcane bagasse, suitable for hot food and leak resistant for sauces.",
   materials: ["bagasse", "water-based coating"],
-  targetAudience: "B2B food service buyers",
+  targetAudience: "B2B food service buyers ",
 };
 
 const sampleImpactPayload = {
